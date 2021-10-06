@@ -1,0 +1,42 @@
+# www.robotstxt.org/
+# www.google.com/support/webmasters/bin/answer.py?hl=en&answer=156449
+
+User-agent: *
+Disallow: /api/
+Disallow: /css/
+Disallow: /images/
+Disallow: /js/
+Disallow: /bundles/
+Disallow: /components/
+Disallow: /uploads/maps/
+Disallow: /maps_tiles/
+
+Disallow: /fr/js/translations.js
+Disallow: /fr/api/*
+Disallow: /fr/login_check
+Disallow: /fr/logout
+Disallow: /fr/check-email
+Disallow: /fr/resetting*
+Disallow: /fr/maps/directions/
+Disallow: /fr/maps/settings/
+Disallow: /fr/maps/ref-data/
+Disallow: /fr/maps/image/
+Disallow: /fr/maps/tile/
+Disallow: /fr/character/generate
+Disallow: /fr/character/reset*
+
+Disallow: /en/js/translations.js
+Disallow: /en/api/*
+Disallow: /en/login_check
+Disallow: /en/logout
+Disallow: /en/check-email
+Disallow: /en/resetting*
+Disallow: /en/maps/directions/
+Disallow: /en/maps/settings/
+Disallow: /en/maps/ref-data/
+Disallow: /en/maps/image/
+Disallow: /en/maps/tile/
+Disallow: /en/character/generate
+Disallow: /en/character/reset*
+
+Disallow: /img/feond-beer/*

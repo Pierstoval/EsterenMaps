@@ -1,0 +1,22 @@
+easy_admin:
+    entities:
+        Factions:
+            label: admin.maps.factions
+            class: EsterenMaps\Entity\Faction
+            controller: Admin\CustomController\EsterenMaps\AdminFactionController
+            list:
+                fields:
+                    - { property: id, label: 'admin.entities.common.id' }
+                    - { property: name, label: 'admin.entities.common.name' }
+                    - { property: description, label: 'admin.entities.common.description' }
+                    - { property: book, label: 'admin.entities.common.book' }
+
+            form:
+                fields:
+                    - property: translatedNames
+                      label: 'admin.entities.common.name'
+                      type: Main\Form\TranslatableStringType
+                    - property: translatedDescriptions
+                      label: 'admin.entities.common.description'
+                      type: Main\Form\TranslatableStringType
+                    - { property: book, label: 'admin.entities.common.book' }

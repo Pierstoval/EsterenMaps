@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'EsterenPortal' %}
+
+{% block menu_left_content %}
+    <li>
+        <a href="#" class="dropdown-button sidenav-trigger" data-target="maps-dropdown">
+            {{ 'entities.maps.title' | trans({}, 'EsterenMaps') }}
+            <span class="fa fa-caret-down"></span>
+        </a>
+        <ul id="maps-dropdown" class="dropdown-content">
+            {% for map in get_menu_maps() %}
+                <li>
+                    <a href="{{ path('esterenmaps_maps_maps_view', {'nameSlug': map.nameSlug}) }}">{{ map.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </li>
+{% endblock %}
+
+{% block menu_right_content %}
+    {{ parent() }}
+{% endblock %}
+
+{% block footer_about -%}
+    <h2>{{ 'footer.about'|trans({}, 'messages') }}</h2>
+    <p>{{ 'footer.about_text'|trans|raw }}</p>
+{%- endblock %}
+
+{% block footer_links_content -%}
+    {{ parent() }}
+{%- endblock %}
+
+{% block footer_social_networks_content %}
+{% endblock %}

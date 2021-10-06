@@ -1,0 +1,40 @@
+{% trans_default_domain 'EsterenMaps' %}
+{% apply spaceless %}
+{% if path|length %}
+    <h3>{{ 'travel.itinerary' | trans }} :</h3>
+    <p>
+        <strong>{{ 'travel.distance' | trans }} :</strong> {{ total_distance | format_number }}km
+        <br>
+        <strong>{{ 'travel.duration_estimated' | trans }} :</strong> {{ 'travel.duration' | trans({'%days%': duration_real.days, '%hours%': duration_real.hours}) }}
+    </p>
+
+    <h4>{{ 'travel.steps' | trans }} :</h4>
+    <h5>{{ 'travel.hours_per_day_details'|trans({'%hours%': hours_per_day}) }}</h5>
+    <ul id="directions_steps">
+        {% for i, marker in path|filter((marker)=>marker.route is not empty) %}
+            <li>
+                {% if marker.id == start.id %}
+                    <strong>{{ 'travel.path.start' | trans }} :</strong>
+                {% else %}
+                    <strong>{{ 'travel.path.stop' | trans }} :</strong>
+                {% endif %}
+                {{ marker.name }}<br>
+                <strong>{{ 'travel.path.route' | trans }} :</strong> {{ marker.route.name }}<br>
+                <strong>{{ 'travel.distance' | trans }} :</strong> {{ marker.route.distance | format_number }}km<br>
+                {% if marker.duration_real is defined %}
+                    <strong>{{ 'travel.duration_step' | trans }} :</strong> {{ 'travel.duration_minutes' | trans({'%days%': marker.duration_real.days, '%hours%': marker.duration_real.hours}) }}
+                {% endif %}
+            </li>
+        {% endfor %}
+
+        <li>
+            <strong>{{ 'travel.path.arrival' | trans }} :</strong>
+            {{ end.name }}
+        </li>
+    </ul>
+{% else %}
+    <p class="alert alert-warning" style="color: darkred;">{{ 'travel.error.no_itinerary' | trans }}</p>
+    <p><strong>{{ 'travel.path.start' | trans }} :</strong> {{ start.name }}</p>
+    <p><strong>{{ 'travel.path.arrival' | trans }} :</strong> {{ end.name }}</p>
+{% endif %}
+{% endapply %}

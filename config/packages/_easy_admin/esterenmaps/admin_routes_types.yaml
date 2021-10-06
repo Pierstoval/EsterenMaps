@@ -1,0 +1,18 @@
+easy_admin:
+    entities:
+        RoutesTypes:
+            label: admin.maps.routes_types
+            class: EsterenMaps\Entity\RouteType
+            controller: Admin\CustomController\BaseMapAdminController
+            list:
+                actions:
+                    - '-delete'
+                fields:
+                    - { property: id, label: 'admin.entities.common.id' }
+                    - { property: name, label: 'admin.entities.common.name' }
+                    - { property: color, label: 'admin.entities.common.color' }
+                    - { property: routes, label: 'Routes' }
+            form:
+                fields:
+                    - { property: name, label: 'admin.entities.common.name' }
+                    - { property: color, label: 'admin.entities.common.color' }

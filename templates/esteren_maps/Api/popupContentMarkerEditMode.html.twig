@@ -1,0 +1,13 @@
+{% apply spaceless %}
+    <h3>{{ 'entities.markers.title_singular' | trans({}, 'EsterenMaps') }}</h3>
+    <button class="btn btn-small" data-save data-save-marker type="button">
+        {{ 'action.save'|trans }}
+        <span class="progress"><span class="indeterminate"></span></span>
+    </button>
+     
+    <button class="btn btn-small red darken-2" data-delete data-delete-marker type="button">
+        {{ 'action.delete'|trans }}
+        <span class="progress"><span class="indeterminate"></span></span>
+    </button>
+    {{ form(form) }}
+{% endapply %}

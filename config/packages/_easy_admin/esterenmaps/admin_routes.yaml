@@ -1,0 +1,28 @@
+easy_admin:
+    entities:
+        Routes:
+            label: admin.maps.routes
+            class: EsterenMaps\Entity\Route
+            controller: Admin\CustomController\BaseMapAdminController
+            list:
+                actions:
+                    - '-delete'
+                fields:
+                    - { property: id, label: 'admin.entities.common.id' }
+                    - { property: name, label: 'admin.entities.common.name' }
+                    - { property: distance, label: 'admin.entities.routes.distance' }
+                    - { property: description, label: 'admin.entities.common.description' }
+                    - { property: routeType, label: 'RoutesTypes' }
+                    - { property: markerStart, label: 'admin.entities.routes.markerStart' }
+                    - { property: markerEnd, label: 'admin.entities.routes.markerEnd' }
+            form:
+                fields:
+                    - { property: name,  label: 'admin.entities.common.name', type_options: { required: true } }
+                    - { property: description, label: 'admin.entities.common.description' }
+                    - { property: markerStart, label: 'admin.entities.routes.markerStart' }
+                    - { property: markerEnd, label: 'admin.entities.routes.markerEnd' }
+                    - { property: routeType, label: 'RoutesTypes' }
+                    - { property: faction, label: 'Factions' }
+                    - { property: guarded, label: 'admin.entities.routes.guarded' }
+                    - { property: coordinates, label: 'admin.entities.common.coordinates', type_options: { disabled: true, required: false } }
+                    - { property: map, label: 'Maps', type_options: { disabled: true, required: false } }

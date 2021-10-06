@@ -1,0 +1,131 @@
+contact.send_message: 'Envoyez-nous un message'
+
+contact.email.message: 'Message'
+contact.email.sender: 'Sent by: %sender%'
+
+contact.form.name: 'Nom'
+contact.form.email: 'Adresse e-mail'
+contact.form.message: 'Votre message'
+contact.form.subject: 'Objet'
+contact.form.brand: 'Gamme (si applicable)'
+contact.form.title: 'Sujet de votre message'
+contact.form.send: 'Envoyer'
+contact.form.message_sent: 'Votre message a été envoyé, merci!'
+contact.form.message_sent_disclaimer: |
+    Bonjour,<br>
+    Nous avons bien reçu votre message. Le SAV est traité tous les lundis et les mardis. Vous recevrez une réponse à votre demande dans les meilleurs délais.<br>
+    En vous remerciant de votre patience.<br>
+    L'équipe Agate.
+
+contact.form.error: 'Une erreur est survenue lors de l''envoi du mail. Nos équipes ont été prévenues.'
+contact.form.message_subject: '[%subject%] Message de "%name%"'
+
+contact.subject.application: 'Candidature'
+contact.subject.events: 'Évènements'
+contact.subject.license: 'Licences'
+contact.subject.organizations: 'Associations'
+contact.subject.other: 'Autre (à préciser)'
+contact.subject.pro: 'Professionnels'
+contact.subject.support: 'Service après-vente'
+contact.subject.specify: '- Spécifiez un sujet -'
+
+contact.brand.7th_sea: '7e Mer'
+contact.brand.dragons: 'Dragons'
+contact.brand.demon: 'Démon : la Damnation'
+contact.brand.esteren: 'Les Ombres d''Esteren'
+contact.brand.esteren_maps: 'Esteren Maps'
+contact.brand.requiem: 'Vampire : Le Requiem'
+contact.brand.vermine: 'Vermine 2047'
+contact.brand.other: 'Autre'
+contact.brand.specify: '- Specifez une gamme (si applicable) -'
+
+totem_system.title: Système de jeu Totem
+totem_system.subtitle: "*todo*"
+totem_system.homepage_button: Télécharger Totem
+totem_system.home.details_title: Qu'est-ce que le système Totem ?
+totem_system.home.details_text: "*todo*"
+totem_system.agree: D'accord
+totem_system.close: Annuler
+totem_system.modal.terms: Conditions d'utilisation du système Totem
+
+menu:
+    contact: 'Contact'
+
+vermine:
+    footer_message: Vermine 2047 est une création de Julien Blondel
+    subscribe_label: Suivez le développement du projet et recevez un email au lancement de la souscription.
+    subscribe_button: Souscrire
+    footer_follow_on_facebook: '<a href="https://www.facebook.com/Vermine2047/">Suivre le projet sur Facebook</a>'
+
+team:
+team.main_title: L'Équipe du studio Agate
+team.permanent_members: Le studio Agate est un collectif d'auteurs.
+team.friends_text: |
+        Nous travaillons avec de nombreux collaborateurs et créatifs freelance.
+team.friends_thanks: |
+        Un grand merci à toutes les personnes qui participent ou qui ont un jour ou l'autre participé à nos projets,
+        Benjamin Loomes de Syrinscape, Ludo "Elenyl" et Nico du dème de Naxos, Jenny Bendel, les compositeurs Delphine
+        Bois, Jure Peternel, Cyrille et Guillaume Aufaure, Loïc et Ed de la Brasserie de l'Etre, Jim Searcy et les
+        équipes de Studio 2 Publishing, Ingo, Thibaud et l'équipe de Gastronogeek, Fred Pinson, l'association
+        Forgesonges, Aurel et Quang de Blue Pill, Marc Gueroult, Dragon Etoile et Tchernopuss, Ynis, Pénombre, Arnaud,
+        Jean et les équipes d'Ulule, Doudou Lacrouts et ses équipes, Kathie, Aude-Lise, Kherveen, Ikaar, Cédric, Dominique
+        Atlan, David Camus, Dref, François Rousselot, Patrice et les équipes de Iello.<br>
+        Merci à celles et ceux qui nous ont soutenus et qui continuent à le faire, les playtesteurs, tous les relecteurs
+        qui font un travail décisif, les volontaires sur la tournée, les boutiques, les membres de la communauté sans
+        qui nous ne serions rien et bien sûr nos amis, nos familles...<br>
+        MERCI !
+
+
+# Permanent members
+
+team.members.ginl.name: GinL
+team.members.ginl.details: Illustratrice, graphiste, maquettiste du studio.
+
+team.members.clovis.name: Clovis
+team.members.clovis.details: 'Traducteur et coordinateur des versions anglaises des créations du studio.'
+
+team.members.iris.name: Iris
+team.members.iris.details: Auteure, vice-directrice du studio, directrice artistique.
+
+team.members.pierstoval.name: Pierstoval
+team.members.pierstoval.details: Webmaster et développeur web du studio.
+
+team.members.nel.name: Nel
+team.members.nel.details: Auteur, directeur du studio, directeur artistique.
+
+team.members.vincent.name: Vincent
+team.members.vincent.details: Auteur, coordinateur des licences.
+
+# Friends
+
+team.members.akae.name: Olivier "Akae" Sanfilippo
+team.members.akae.details: Illustrateur, cartographe.
+
+team.members.ben.name: Benjamin Diebling
+team.members.ben.details: Réalisateur, scénariste sur la gamme Dragons.
+
+team.members.chane.name: Chane
+team.members.chane.details: Auteure, illustratrice sur les gammes Esteren et Dragons.
+
+team.members.chris.name: Chris
+team.members.chris.details: Peintre, illustrateur sur les gammes Esteren et Dragons.
+
+team.members.clarisse_may.name: Clarisse Mây
+team.members.clarisse_may.details: Compositrice, interprète sur l'album Adeliane.
+
+team.members.gawain.name: Gawain
+team.members.gawain.details: Illustrateur senior du studio.
+
+team.members.julien_blondel.name: Julien Blondel
+team.members.julien_blondel.details: Scénariste BD, auteur et coordinateur de la gamme Vermine 2047.
+
+team.members.nico_jamme.name: Nicolas Jamme
+team.members.nico_jamme.details: Illustrateur sur les gammes Esteren et Dragons.
+
+team.members.sebastien_chedal.name: Sebastien Chedal
+team.members.sebastien_chedal.details: Game designer, auteur de la Rose Noire.
+
+team.members.valentin.name: Valentin
+team.members.valentin.details: Distributeur dans le cinéma, co-fondateur du Studio Agate.
+
+product.view: Voir les détails

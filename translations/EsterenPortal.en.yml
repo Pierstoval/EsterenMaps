@@ -1,0 +1,27 @@
+menu:
+    main:
+        agate_studio: 'Studio Agate'
+
+footer:
+    esteren_blog: 'Shadows of Esteren blog'
+    esteren_blog_link: 'http://shadowsofesteren.blogspot.fr'
+    about_text: >
+        Shadows of Esteren is the work of Studio Agate. It exists through various media: a tabletop role-play game,
+        music, board games, and even video games.
+        <br><br>
+        Innovative and crossmedia project, Shadows of Esteren is the first French creation of its kind to have obtained
+        a dozen of prizes internationally, including four Ennie Awards at Indianapolis GenCon in 2013 and 2016.
+
+feond_beer:
+    title: La bière du Féond
+    text: |
+        <p>La bière du Feond est sombre, complexe et énigmatique. Cette bière sèche, puissante, aux arômes torréfiés et
+        aux senteurs résineuses vous emmène dans les forêts profondes de Tri&#8209;Kazel.</p>
+        <p>Bière brassée et embouteillée à Paris par la <a href="https://www.facebook.com/brasseriedeletre/">Brasserie
+        de l'Être</a>. Disponible à la vente sur place.</p>
+        <p>
+            Brasserie de l'Être<br>
+            7ter Rue Duvergier, 75019 Paris<br>
+            Téléphone : 01 40 16 56 62
+        </p>
+        <p>Découvrez les Ombres d'Esteren : <a href="%path%" title="Portail des Ombres d'Esteren">www.esteren.org</a></p>

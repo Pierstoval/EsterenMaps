@@ -1,0 +1,68 @@
+{% extends 'esteren_maps/maps-layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('maps_styles') }}
+    <style type="text/css" id="map_add_style"></style>
+{% endblock %}
+
+{% block title %}{{ 'admin.edit_map' | trans({},'EsterenMaps') }} {{ map.name }} - {{ parent() }}{% endblock %}
+
+{% block layout %}
+    <div id="map_wrapper">
+        <div id="esterenmap_sidebar" class="row">
+            <div class="col s12">
+                <ul class="sidebar-links tabs tabs-fixed-width">
+                    <li class="tab active"><a href="#basemaptab"><i class="fa fa-map"></i></a></li>
+                </ul>
+            </div>
+            <div class="sidebar-content-container col s12">
+                <div id="basemaptab">
+                    <h1>{{ map.name }}</h1>
+                    <p>{{ map.description|nl2br }}</p>
+                </div>
+            </div>
+        </div>
+        <div id="map"></div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('maps') }}
+
+    <script type="text/javascript" src="{{ path('pierstoval_tools_assets_jstranslations', {"_locale": app.request.locale}) }}"></script>
+
+    <script type="text/javascript">
+        (function(w, d){
+            d.map = new EsterenMap({
+                id: {{ map.id }},
+                editMode: true,
+                showDirections: false,
+                apiUrls: {
+                    map: "{{ url('maps_api_maps_get', {id: map.id, host: app.request.host}) }}",
+                    directions: "{{ url('esterenmaps_directions', {
+                        id: map.id,
+                        from: '9999',
+                        to: '8888',
+                        host: app.request.host
+                    })|replace({'9999': '{from}', '8888': '{to}'}) }}",
+                    tiles: "{{ app.request.schemeAndHttpHost }}{{ asset('maps_tiles/'~map.id~'/{z}/{y}/{x}.jpg') }}",
+                    endpoint: "{{ app.request.schemeAndHttpHost }}/{{ app.request.locale }}/api"
+                },
+                LeafletMapBaseOptions: {
+                    zoom: {{ map.startZoom }},
+                    maxZoom: {{ map.maxZoom }}
+                    {% if map.arrayBounds|length %},
+                    maxBounds: {{ map.bounds|raw }}
+                    {% endif %}
+                },
+                LeafletLayerBaseOptions: {
+                    maxZoom: {{ map.maxZoom }},
+                    maxNativeZoom: {{ map.maxZoom }},
+                    tileSize: {{ tile_size }}
+                }
+            });
+        })(window, document);
+    </script>
+{% endblock %}

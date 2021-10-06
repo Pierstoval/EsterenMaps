@@ -1,0 +1,20 @@
+easy_admin:
+    entities:
+        ZonesTypes:
+            label: admin.maps.zones_types
+            class: EsterenMaps\Entity\ZoneType
+            controller: Admin\CustomController\BaseMapAdminController
+            list:
+                actions:
+                    - '-delete'
+                fields:
+                    - { property: id, label: 'admin.entities.common.id' }
+                    - { property: name, label: 'admin.entities.common.name' }
+                    - { property: color, label: 'admin.entities.common.color' }
+                    - { property: parent, label: 'admin.entities.zones_types.parent' }
+                    - { property: zones, label: 'admin.entities.zones_types.zones' }
+            form:
+                fields:
+                    - { property: name, label: 'admin.entities.common.name' }
+                    - { property: color, label: 'admin.entities.common.color' }
+                    - { property: parent, label: 'admin.entities.zones_types.parent' }

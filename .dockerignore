@@ -1,0 +1,19 @@
+# Non-used files
+*/node_modules
+*/vendor
+*/_dev_files
+*/build
+*/docker
+*/tests
+*/docs
+
+phpunit.xml
+*/var
+
+*.php~
+
+*/public/bundles
+*/public/js/*
+*/public/css/*
+*/public/uploads
+*/public/img/markerstypes

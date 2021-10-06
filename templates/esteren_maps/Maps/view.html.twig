@@ -1,0 +1,49 @@
+{% extends 'esteren_maps/maps-layout.html.twig' %}
+
+{% block title %}{{ 'entities.maps.single_view' | trans({}, 'EsterenMaps') }} {{ map.name }} - {{ parent() }}{% endblock %}
+
+{% block menus '' %}
+{% block footer '' %}
+
+{% block layout %}
+    {% apply spaceless %}
+    <div id="map_wrapper">
+        <div id="esterenmap_sidebar" class="row">
+            <div class="col s12">
+                <ul class="sidebar-links tabs tabs-fixed-width">
+                    <li class="tab active"><a href="#basemaptab"><i class="fa fa-map"></i></a></li>
+                </ul>
+            </div>
+            <div class="sidebar-content-container col s12">
+                <div id="basemaptab">
+                    <h1>{{ map.name }}</h1>
+                    <p>{{ map.description|nl2br }}</p>
+                </div>
+            </div>
+        </div>
+        <div id="map"></div>
+    </div>
+    {% endapply %}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {{ encore_entry_link_tags('maps_styles') }}
+    {{ encore_entry_link_tags('fa') }}
+    <style type="text/css" id="map_add_style"></style>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('maps') }}
+
+    <script type="text/javascript" defer>
+        (function (w, d) {
+            try {
+                d.map = new EsterenMap({{ map_view_options(map, app.user) }});
+            } catch (e) {
+                console.error(e);
+            }
+        })(window, document);
+    </script>
+{% endblock %}

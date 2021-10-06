@@ -1,0 +1,127 @@
+contact.send_message: 'Send us a message'
+
+contact.email.message: 'Message'
+contact.email.sender: 'Envoyé par : %sender%'
+
+contact.form.name: 'Name'
+contact.form.email: 'E-mail address'
+contact.form.message: 'Your message'
+contact.form.subject: 'Subject'
+contact.form.brand: 'Brand (if applicable)'
+contact.form.title: 'Title of your message'
+contact.form.send: 'Send'
+contact.form.message_sent: 'Your email has been sent! Thanks!'
+contact.form.message_sent_disclaimer: |
+    Hello,<br>
+    We have received your message. Support forms are reviewed on Monday and Tuesday. We will endeavor to provide you with an answer as soon as possible.<br>
+    Thank you for your patience,<br>
+    The Agate Team
+
+contact.form.error: 'An error occured when sending the email. Our team was warned and will work on it.'
+contact.form.message_subject: '[%subject%] Message by "%name%"'
+
+contact.subject.application: 'Recruitement'
+contact.subject.events: 'Events'
+contact.subject.license: 'Licenses'
+contact.subject.organizations: 'Organizations'
+contact.subject.other: 'Other (specify)'
+contact.subject.pro: 'Professionals'
+contact.subject.support: 'Support'
+contact.subject.specify: '- Specify a subject -'
+
+contact.brand.7th_sea: '7th sea'
+contact.brand.dragons: 'Fateforge'
+contact.brand.demon: 'Demon'
+contact.brand.esteren: 'Shadows of Esteren'
+contact.brand.esteren_maps: 'Esteren Maps'
+contact.brand.requiem: 'Vampire: The Requiem'
+contact.brand.vermine: 'Vermine 2047'
+contact.brand.other: 'Other'
+contact.brand.specify: '- Specify a brand (if applicable) -'
+
+totem_system.title: Totem System for role-playing games
+totem_system.subtitle: "*todo*"
+totem_system.homepage_button: Télécharger Totem
+totem_system.home.details_title: What is the Totem system?
+totem_system.home.details_text: "*todo*"
+
+menu:
+    contact: 'Contact'
+
+vermine:
+    footer_message: Vermine 2047 is created by Julien Blondel
+    subscribe_label: Follow project's development and receive an e-mail when subscription launches.
+    subscribe_button: Subscribe
+    footer_follow_on_facebook: '<a href="https://www.facebook.com/Vermine2047/">Follow the project on Facebook</a>'
+
+team:
+team.main_title: The Studio Agate team
+team.permanent_members: Studio Agate is a gathering of authors
+team.friends_text: |
+        We work with several collaborators and freelancers.
+team.friends_thanks: |
+        A big thank you to everyone who participate or eventually participated to our projects, Benjamin Loomes of
+        Syrinscape, Ludo "Elenyl" and Nico du dème de Naxos, Jenny Bendel, composers Delphine Bois, Jure Peternel,
+        Cyrille and Guillaume Aufaure, Loïc and Ed de la Brasserie de l'Etre, Jim Searcy and Studio 2 Publishing teams,
+        Ingo, Thibaud and Gastronogeek team, Fred Pinson, Forgesonges association, Aurel and Quang from Blue Pill, Marc
+        Gueroult, Dragon Etoile and Tchernopuss, Ynis, Pénombre, Arnaud, Jean and Ulule teams, Doudou Lacrouts and his
+        teams, Kathie, Aude-Lise, Kherveen, Ikaar, Cédric, Dominique Atlan, David Camus, Dref, François
+        Rousselot, Patrice and Iello teams.<br>
+        Thans to everyone who supported us and continue to do so, playtesters, all proof readers that make a very
+        crucial job, volunteers during the tour, shops, members of the community without whom we would be nothing, and
+        of course our friends, family...<br>
+        THANK YOU!
+
+# Permanent members
+
+team.members.ginl.name: GinL
+team.members.ginl.details: Layout artist, graphic designer, and illustrator.
+
+team.members.clovis.name: Clovis
+team.members.clovis.details: 'Translator and coordinator for the studio''s English translations.'
+
+team.members.iris.name: Iris
+team.members.iris.details: Author, studio vice-director, artistic director.
+
+team.members.pierstoval.name: Pierstoval
+team.members.pierstoval.details: Webmaster and web developer.
+
+team.members.nel.name: Nel
+team.members.nel.details: Author, studio director, artistic director.
+
+team.members.vincent.name: Vincent
+team.members.vincent.details: Author, licenses coordinator.
+
+# Friends
+
+team.members.akae.name: Olivier "Akae" Sanfilippo
+team.members.akae.details: Illustrator, mapmaker.
+
+team.members.ben.name: Benjamin Diebling
+team.members.ben.details: Movie director, author for the Fateforge series.
+
+team.members.chane.name: Chane
+team.members.chane.details: Author, illustrator for the Esteren and Fateforge series.
+
+team.members.chris.name: Chris
+team.members.chris.details: Painter and illustrator for the Esteren and Fateforge series.
+
+team.members.clarisse_may.name: Clarisse Mây
+team.members.clarisse_may.details: Composer and singer for the album Adeliane.
+
+team.members.gawain.name: Gawain
+team.members.gawain.details: Illustrator.
+
+team.members.julien_blondel.name: Julien Blondel
+team.members.julien_blondel.details: Comic scriptwriter, author and coordinator for the Vermine 2047 series.
+
+team.members.nico_jamme.name: Nicolas Jamme
+team.members.nico_jamme.details: Illustrator for the Esteren and Fateforge series.
+
+team.members.sebastien_chedal.name: Sebastien Chedal
+team.members.sebastien_chedal.details: Game designer, author of the Black Rose.
+
+team.members.valentin.name: Valentin
+team.members.valentin.details: Distributor in the cinema industry, co-founder of Studio Agate.
+
+product.view: View details

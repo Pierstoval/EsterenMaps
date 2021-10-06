@@ -1,3 +1,23 @@
+/build/
+/composer.phar
+
+!/public/build/.gitkeep
+!/public/uploads/portal/.gitkeep
+
+/var/*
+!/var/uploads/.gitkeep
+
+.php_cs.cache
+docker-compose.override.yaml
+
+# Esteren Maps
+/public/maps_tiles/*
+!/public/maps_tiles/empty.jpg
+
+# Assets
+!/public/img/favicon.ico
+/public/uploads/
+!/public/uploads/maps/
 
 ###> symfony/framework-bundle ###
 /.env.local
@@ -8,3 +28,17 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+phpunit.phar
+###< symfony/phpunit-bridge ###
+
+###> symfony/webpack-encore-bundle ###
+/node_modules/
+/public/build/
+npm-debug.log
+yarn-error.log
+###< symfony/webpack-encore-bundle ###

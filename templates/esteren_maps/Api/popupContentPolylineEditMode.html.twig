@@ -1,0 +1,13 @@
+{% apply spaceless %}
+    <h3>{{ 'Routes' | trans }}</h3>
+    <button class="btn btn-small" data-save data-save-route type="button">
+        {{ 'action.save'|trans }}
+        <span class="progress"><span class="indeterminate"></span></span>
+    </button>
+     
+    <button class="btn btn-small red darken-2" data-delete data-delete-route type="button">
+        {{ 'action.delete'|trans }}
+        <span class="progress"><span class="indeterminate"></span></span>
+    </button>
+    {{ form(form) }}
+{% endapply %}

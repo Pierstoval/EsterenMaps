@@ -1,0 +1,49 @@
+
+body#vermine {
+    background-size: cover;
+
+    img#vermine_logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        max-width: 80%;
+    }
+
+    #wrapper, #layout, #content {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    footer {
+        padding-top: 10px;
+        text-shadow: 0 2px 5px #000, 0 2px 5px rgba(0, 0, 0, 0.75);
+        line-height: 1.3em;
+    }
+}
+
+input, textarea, select {
+    color: black;
+}
+
+// Materialize's $medium-screen-up
+@media (min-width: 768px) and (max-width: $medium-screen-up) and (orientation: portrait) {
+    body#vermine img#vermine_logo {
+        top: 45%;
+    }
+}
+@media (max-width: 767px) and (orientation: portrait) {
+    body#vermine img#vermine_logo {
+        top: 35%;
+    }
+}
+@media (max-width: 767px) and (max-height: 400px) and (orientation: landscape) {
+    body#vermine img#vermine_logo {
+        top: 27.5%;
+    }
+}

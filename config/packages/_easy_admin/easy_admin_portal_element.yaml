@@ -1,0 +1,97 @@
+easy_admin:
+    entities:
+        PortalElement:
+            class: Agate\Entity\PortalElement
+            label: PortalElement
+            controller: Admin\CustomController\PortalElementController
+
+            list:
+                actions:
+                    - '-delete'
+                fields:
+                    - { property: id, label: 'admin.entities.common.id' }
+                    - { property: portal, label: 'admin.entities.portalElement.portal' }
+                    - { property: locale, label: 'admin.entities.common.locale' }
+                    - property: imageUrl
+                      template: 'easy_admin/fields/portal_image.html.twig'
+                      label: 'admin.entities.portalElement.image'
+                    - { property: title, label: 'admin.entities.portalElement.title' }
+                    - { property: subtitle, label: 'admin.entities.portalElement.subtitle' }
+                    - { property: buttonText, label: 'admin.entities.portalElement.buttonText' }
+
+            new:
+                fields:
+                    - property: portal
+                      label: 'admin.entities.portalElement.portal'
+                      type: choice
+                      type_options:
+                          expanded: true
+                          choice_translation_domain: false
+                          choices:
+                              Agate: agate
+                              Esteren: esteren
+                              Dragons: dragons
+                              Vermine: vermine
+
+                    - property: locale
+                      label: 'admin.entities.common.locale'
+                      type: choice
+                      type_options:
+                          expanded: true
+                          choices: '%locales%'
+                          choice_translation_domain: Languages
+
+                    - { property: title, label: 'admin.entities.portalElement.title' }
+                    - property: subtitle
+                      label: 'admin.entities.portalElement.subtitle'
+                      type_options: { required: false }
+                    - property: buttonLink
+                      label: 'admin.entities.portalElement.buttonLink'
+                      type_options: { required: false }
+                    - property: buttonText
+                      label: 'admin.entities.portalElement.buttonText'
+                      type_options: { required: false }
+
+                    - property: image
+                      type: file
+                      virtual: false
+                      label: 'admin.entities.portalElement.image'
+                      type_options:
+                          help: 'admin.entities.portalElement.image_help'
+                          required: true
+
+            edit:
+                fields:
+                    - property: portal
+                      label: 'admin.entities.portalElement.portal'
+                      type: text
+                      type_options:
+                          disabled: true
+                          attr:
+                              readonly: readonly
+
+                    - property: locale
+                      label: 'admin.entities.common.locale'
+                      type: text
+                      type_options:
+                          disabled: true
+                          attr:
+                              readonly: readonly
+
+                    - { property: title, label: 'admin.entities.portalElement.title' }
+                    - property: subtitle
+                      label: 'admin.entities.portalElement.subtitle'
+                      type_options: { required: false }
+                    - property: buttonLink
+                      label: 'admin.entities.portalElement.buttonLink'
+                      type_options: { required: false }
+                    - property: buttonText
+                      label: 'admin.entities.portalElement.buttonText'
+                      type_options: { required: false }
+
+                    - property: image
+                      type: file
+                      label: 'admin.entities.portalElement.image'
+                      type_options:
+                          help: 'admin.entities.portalElement.image_help'
+                          required: false

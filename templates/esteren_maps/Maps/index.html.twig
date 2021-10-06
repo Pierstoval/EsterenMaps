@@ -1,0 +1,25 @@
+{% extends 'esteren_maps/maps-layout.html.twig' %}
+
+{% trans_default_domain 'EsterenMaps' %}
+
+{% block title %}{{ 'maps.list' | trans }} - {{ parent() }}{% endblock %}
+
+{% block content_for_layout %}
+    <h1>{{ 'maps.list' | trans }}</h1>
+
+    <section class="row maps-list">
+    {% for map in list %}
+        <article class="col s4">
+            <header><h2>{{ map.name }}</h2></header>
+            <p>{{ map.description }}</p>
+            <footer>
+                <a href="{{ url('esterenmaps_maps_maps_view', {'nameSlug':map.nameSlug}) }}" title="{{ 'maps.view' | trans }} : {{ map.name | trans }}" class="btn btn-default">
+                    <i class="fa fa-eye"></i> {{ 'maps.view' | trans }}
+                </a>
+            </footer>
+        </article>
+        {% else %}
+        <p class="alert alert-warning">{{ 'maps.none' | trans }}</p>
+    {% endfor %}
+    </section>
+{% endblock %}

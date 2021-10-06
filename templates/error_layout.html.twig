@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets -%}
+    {{- parent() -}}
+    {% set host = app.request.host %}
+    {% if host in [agate_domains_portal, vermine_domains_portal] %}
+        <link rel="stylesheet" href="{{ asset('build/white_layout.css') }}" type="text/css">
+        {% if host == agate_domains_portal %}
+            <link rel="stylesheet" href="{{ asset('build/agate.css') }}" type="text/css">
+        {% endif %}
+    {% endif %}
+{%- endblock %}
+
+{% block footer_social_networks '' %}

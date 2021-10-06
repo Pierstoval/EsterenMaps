@@ -1,0 +1,26 @@
+easy_admin:
+    entities:
+        TransportTypes:
+            label: admin.maps.transports_types
+            class: EsterenMaps\Entity\TransportType
+            controller: Admin\CustomController\TransportTypesController
+            list:
+                actions:
+                    - '-delete'
+                fields:
+                    - { property: id, label: 'admin.entities.common.id' }
+                    - { property: name, label: 'admin.entities.common.name' }
+                    - { property: slug, label: 'admin.entities.common.slug' }
+                    - { property: speed, label: 'admin.entities.transports.speed', format: '%.2f' }
+                    - { property: description, label: 'admin.entities.common.description' }
+            form:
+                fields:
+                    - { property: name, label: 'admin.entities.common.name' }
+                    - { property: slug, label: 'admin.entities.common.slug' }
+                    - { property: speed, label: 'admin.entities.transports.speed', type_options: { help: '(Km/h)' } }
+                    - { property: description, label: 'admin.entities.common.description' }
+                    - property: transportsModifiers
+                      label: 'admin.entities.transports.modifiers'
+                      type: 'Symfony\Component\Form\Extension\Core\Type\CollectionType'
+                      type_options:
+                          entry_type: 'EsterenMaps\Form\TransportModifierType'

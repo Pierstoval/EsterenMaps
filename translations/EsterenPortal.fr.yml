@@ -1,0 +1,28 @@
+menu:
+    main:
+        agate_studio: 'Studio Agate'
+
+footer:
+    esteren_blog: 'Blog des Ombres d''Esteren'
+    esteren_blog_link: 'http://ombresdesteren.blogspot.fr/'
+    about_text: >
+        Les Ombres d'Esteren est un projet réalisé par le studio Agate. Le premier ouvrage de la gamme a été publié en
+        France en 2010 puis aux USA en 2012.
+        <br><br>
+        Projet innovant et transmedia, Les Ombres d'Esteren est la première création française du genre à avoir
+        remporté une dizaine de prix à l'international dont quatre Ennie Awards à la GenCon d'Indianapolis en 2013 et
+        2016.
+
+feond_beer:
+    title: La bière du Féond
+    text: |
+        <p>La bière du Feond est sombre, complexe et énigmatique. Cette bière sèche, puissante, aux arômes torréfiés et
+        aux senteurs résineuses vous emmène dans les forêts profondes de Tri&#8209;Kazel.</p>
+        <p>Bière brassée et embouteillée à Paris par la <a href="https://www.facebook.com/brasseriedeletre/">Brasserie
+        de l'Être</a>. Disponible à la vente sur place.</p>
+        <p>
+            Brasserie de l'Être<br>
+            7ter Rue Duvergier, 75019 Paris<br>
+            Téléphone : 01 40 16 56 62
+        </p>
+        <p>Découvrez les Ombres d'Esteren : <a href="%path%" title="Portail des Ombres d'Esteren">www.esteren.org</a></p>

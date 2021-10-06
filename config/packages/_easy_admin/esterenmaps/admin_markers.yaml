@@ -1,0 +1,43 @@
+easy_admin:
+    entities:
+        Markers:
+            label: admin.maps.markers
+            class: EsterenMaps\Entity\Marker
+            controller: Admin\CustomController\EsterenMaps\AdminMarkerController
+            list:
+                actions:
+                    - '-delete'
+                fields:
+                    - { property: id, label: 'admin.entities.common.id' }
+                    - { property: name, label: 'admin.entities.common.name' }
+                    - { property: latitude, label: 'admin.entities.markers.latitude' }
+                    - { property: longitude, label: 'admin.entities.markers.longitude' }
+                    - { property: markerType, label: 'MarkersTypes' }
+                    - property: webIcon
+                      label: 'admin.entities.markers.web_icon'
+                      type: image
+            form:
+                fields:
+                    - property: translatedNames
+                      label: 'admin.entities.common.name'
+                      type: Main\Form\TranslatableStringType
+                    - property: translatedDescriptions
+                      label: 'admin.entities.common.description'
+                      type: Main\Form\TranslatableStringType
+                    - { property: markerType, label: 'MarkersTypes' }
+                    - { property: faction, label: 'Factions' }
+                    - property: latitude
+                      label: 'admin.entities.markers.latitude'
+                      type_options: { disabled: true, required: false }
+
+                    - property: longitude
+                      label: 'admin.entities.markers.longitude'
+                      type_options: { disabled: true, required: false }
+
+                    - property: altitude
+                      label: 'admin.entities.markers.altitude'
+                      type_options: { disabled: true, required: false }
+
+                    - property: map
+                      label: 'Maps'
+                      type_options: { disabled: true, required: false }

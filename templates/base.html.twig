@@ -178,8 +178,8 @@
 {% endblock %}
 
 {% block javascripts %}
-    {{ encore_entry_script_tags('global') }}
     <script type="text/javascript" src="{{ path('pierstoval_tools_assets_jstranslations', {'_locale': app.request.locale}) }}"></script>
+    {{ encore_entry_script_tags('global') }}
 {% endblock %}
 
 <script type="text/javascript">

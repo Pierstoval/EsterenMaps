@@ -33,7 +33,7 @@ class AssetsController extends AbstractController
 
         $response->headers->add(['Content-type' => 'application/javascript']);
 
-        return $this->render('agate/assets/js_translations.js.twig', [
+        return $this->render('assets/js_translations.js.twig', [
             'locale' => $_locale,
         ], $response);
     }

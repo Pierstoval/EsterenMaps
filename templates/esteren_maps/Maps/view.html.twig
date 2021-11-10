@@ -37,7 +37,7 @@
     {{ parent() }}
     {{ encore_entry_script_tags('maps') }}
 
-    <script type="text/javascript" defer>
+    <script type="text/javascript">
         (function (w, d) {
             try {
                 d.map = new EsterenMap({{ map_view_options(map, app.user) }});

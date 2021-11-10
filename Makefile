@@ -111,15 +111,15 @@ prod-db: var/dump.sql dev-db
 .PHONY: prod-db
 
 var/dump.sql: ## Tries to download a database from production environment
-	@if [ "${AGATE_DEPLOY_REMOTE}" = "" ]; then \
-		echo "[ERROR] Please specify the AGATE_DEPLOY_REMOTE env var to connect to a remote" ;\
+	@if [ "${ESTEREN_MAPS_DEPLOY_REMOTE}" = "" ]; then \
+		echo "[ERROR] Please specify the ESTEREN_MAPS_DEPLOY_REMOTE env var to connect to a remote" ;\
 		exit 1 ;\
 	fi; \
-	if [ "${AGATE_DEPLOY_DIR}" = "" ]; then \
-		echo "[ERROR] Please specify the AGATE_DEPLOY_DIR env var to determine which directory to use in prod" ;\
+	if [ "${ESTEREN_MAPS_DEPLOY_DIR}" = "" ]; then \
+		echo "[ERROR] Please specify the ESTEREN_MAPS_DEPLOY_DIR env var to determine which directory to use in prod" ;\
 		exit 1 ;\
 	fi; \
-	ssh ${AGATE_DEPLOY_REMOTE} ${AGATE_DEPLOY_DIR}/../dump_db.bash > var/dump.sql
+	ssh ${ESTEREN_MAPS_DEPLOY_REMOTE} ${ESTEREN_MAPS_DEPLOY_DIR}/../dump_db.bash > var/dump.sql
 
 migrations: ## Reset the database
 	$(SYMFONY_CONSOLE) doctrine:migrations:migrate --no-interaction

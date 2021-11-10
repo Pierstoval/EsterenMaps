@@ -5,16 +5,16 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd ${DIR}/../
 
 # These vars must be set in the dev environment for the project to be deployable.
-ssh_remote=${AGATE_DEPLOY_REMOTE}
-prod_dir=${AGATE_DEPLOY_DIR}
+ssh_remote=${ESTEREN_MAPS_DEPLOY_REMOTE}
+prod_dir=${ESTEREN_MAPS_DEPLOY_DIR}
 
 if [ -z $ssh_remote ]; then
-    echo "Please set up the AGATE_DEPLOY_REMOTE environment variable"
+    echo "Please set up the ESTEREN_MAPS_DEPLOY_REMOTE environment variable"
     exit 1
 fi
 
 if [ -z $prod_dir ]; then
-    echo "Please set up the AGATE_DEPLOY_DIR environment variable"
+    echo "Please set up the ESTEREN_MAPS_DEPLOY_DIR environment variable"
     exit 1
 fi
 

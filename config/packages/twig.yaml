@@ -8,8 +8,6 @@ twig:
     form_themes:
         - 'form/form_theme_materialize.html.twig'
         - 'form/range_button_form.html.twig'
-        - 'corahn_rin/form/update_inventory.html.twig'
-        - 'corahn_rin/form/spend_xp_form.html.twig'
 
     globals:
         version_code: '%version_code%'

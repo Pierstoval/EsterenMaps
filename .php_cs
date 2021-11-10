@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Agate Apps package.
+ * This file is part of the Esteren Maps package.
  *
  * (c) Alexandre Rock Ancelet <pierstoval@gmail.com> and Studio Agate.
  *
@@ -12,7 +12,7 @@ declare(strict_types=1);
  */
 
 $header = <<<'HEADER'
-This file is part of the Agate Apps package.
+This file is part of the Esteren Maps package.
 
 (c) Alexandre Rock Ancelet <pierstoval@gmail.com> and Studio Agate.
 

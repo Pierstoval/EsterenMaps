@@ -5,8 +5,8 @@ SET mypath=%~dp0
 cd "%mypath:~0,-1%/.."
 
 REM These vars must be set in the dev environment for the project to be deployable.
-set ssh_remote=%AGATE_DEPLOY_REMOTE%
-set prod_dir=%AGATE_DEPLOY_DIR%
+set ssh_remote=%ESTEREN_MAPS_DEPLOY_REMOTE%
+set prod_dir=%ESTEREN_MAPS_DEPLOY_DIR%
 
 @echo on
 

@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of the Agate Apps package.
+ * This file is part of the Esteren Maps package.
  *
  * (c) Alexandre Rock Ancelet <pierstoval@gmail.com> and Studio Agate.
  *
@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace User\Controller;
 
-use Main\HostLayout;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;

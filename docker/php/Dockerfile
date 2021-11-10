@@ -43,6 +43,8 @@ RUN set -xe \
     \
     && `# PHP and extensions` \
     && apt-get install -y \
+        php-pear \
+        php${PHP_VERSION}-dev `# This part is needed for pear/pecl...` \
         php${PHP_VERSION} \
         php${PHP_VERSION}-cli \
         php${PHP_VERSION}-common \
@@ -57,7 +59,9 @@ RUN set -xe \
         php${PHP_VERSION}-xml \
         php${PHP_VERSION}-zip \
         php${PHP_VERSION}-xdebug \
-        php${PHP_VERSION}-apcu \
+    && (yes '' | pecl install apcu) \
+    && echo 'extension="apcu.so"' > /etc/php/8.0/cli/conf.d/20-apcu.ini \
+    && echo 'extension="apcu.so"' > /etc/php/8.0/fpm/conf.d/20-apcu.ini \
     \
     && `# User management for entrypoint` \
     && chmod +x /bin/entrypoint \

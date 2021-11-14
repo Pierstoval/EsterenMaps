@@ -1,0 +1,42 @@
+entities:
+    markers:
+        title: Markers
+        title_singular: Marker
+    routes:
+        title: Routes
+    zones:
+        title: Zones
+    maps:
+        single_view: Map
+        title: Maps
+
+admin:
+    edit_map: Edit the map
+    back_to_admin: Back to administration
+
+travel:
+    duration_estimated: Estimated travel duration
+    duration_step: Estimated duration for this step
+    duration:  '%days% days and %hours% hours'
+    duration_minutes:  '%days% days and %hours% hour(s)'
+    distance:  Distance
+    itinerary: Itinerary
+    path:
+        start:   Start
+        stop:    Stop
+        route:   Route
+        arrival: Arrival
+    error:
+        no_itinerary: No itinerary found...
+    steps: 'Steps'
+    hours_per_day_details: '(At %hours% hours per day)'
+
+map:
+    hide:
+        zones:   Hide all zones
+        routes:  Hide all routes
+        markers: Hide all markers
+
+maps.list: Maps list
+maps.view: View map
+maps.none: No map

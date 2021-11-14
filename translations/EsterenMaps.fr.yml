@@ -1,0 +1,40 @@
+entities:
+    markers:
+        title: Marqueurs
+        title_singular: Marqueur
+    routes:
+        title: Routes
+    zones:
+        title: Zones
+    maps:
+        single_view: Carte
+        title: Cartes
+
+admin:
+    edit_map: Modifier la carte
+    back_to_admin: Retour à l'administration
+
+travel:
+    duration_estimated: Durée de voyage estimée
+    duration_step: Durée estimée pour cette étape
+    duration:  '%days% jours et %hours% heures'
+    duration_minutes:  '%days% jour(s) et %hours% heure(s)'
+    distance:  Distance
+    itinerary: Itinéraire
+    path:
+        start:   Départ
+        stop:    Escale
+        route:   Route
+        arrival: Arrivée
+    error:
+        no_itinerary: Aucun itinéraire trouvé...
+    steps: 'Étapes'
+    hours_per_day_details: (À raison de %hours% heures par jour)
+
+map.hide.zones:   Afficher/masquer toutes les zones
+map.hide.routes:  Afficher/masquer toutes les routes
+map.hide.markers: Afficher/masquer tous les marqueurs
+
+maps.list: Liste des cartes
+maps.view: Voir la carte
+maps.none: Aucune carte

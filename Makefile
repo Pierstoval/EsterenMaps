@@ -9,7 +9,7 @@ EXEC_PHP        = $(DOCKER_COMPOSE) exec -T php entrypoint
 
 SYMFONY_CONSOLE = $(EXEC_PHP) php bin/console
 COMPOSER        = $(EXEC_PHP) composer
-NPM             = $(EXEC_JS) yarn
+YARN             = $(EXEC_JS) yarn
 
 TEST_DBNAME = test_agate_portal
 PORTAL_DBNAME = main
@@ -132,13 +132,13 @@ fixtures: ## Install all dev fixtures in the database
 .PHONY: fixtures
 
 watch: ## Run Webpack to compile assets on change
-	$(NPM) run watch
+	$(YARN) run watch
 .PHONY: watch
 
 assets: ## Run Webpack to compile assets
 assets: node_modules
 	@mkdir -p public/build/
-	$(NPM) run dev
+	$(YARN) run dev
 .PHONY: assets
 
 vendor: ## Install PHP vendors
@@ -148,7 +148,7 @@ vendor: ## Install PHP vendors
 node_modules: ## Install JS vendors
 node_modules: yarn.lock
 	@mkdir -p public/build/
-	$(DOCKER_COMPOSE) run --rm --entrypoint=/bin/entrypoint node npm install --unsafe-perm=true
+	$(DOCKER_COMPOSE) run --rm --entrypoint=/bin/entrypoint node yarn install
 	$(DOCKER_COMPOSE) up -d node
 .PHONY: node_modules
 
@@ -234,7 +234,7 @@ cs-dry-run:
 
 node-tests: ## Execute checks & tests
 node-tests: start
-	$(EXEC_JS) npm run-script test --verbose -LLLL
+	$(EXEC_JS) yarn run test --verbose -LLLL
 .PHONY: node-tests
 
 qa: ## Execute CS, linting, security checks, etc

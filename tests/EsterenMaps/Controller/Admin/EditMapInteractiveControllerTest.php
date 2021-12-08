@@ -34,7 +34,7 @@ class EditMapInteractiveControllerTest extends PantherTestCase
 
         $this->loginAs($client, 'pierstoval', 'admin');
 
-        $client->request('GET', '/fr/maps/edit-interactive/1');
+        $client->request('GET', '/fr/admin/maps/edit-interactive/1');
 
         static::assertSame(200, $client->getInternalResponse()->getStatusCode());
 

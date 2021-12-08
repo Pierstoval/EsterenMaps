@@ -332,13 +332,9 @@ abstract class AbstractEasyAdminTest extends WebTestCase
         return $lastEntity;
     }
 
-    protected function getHttpClient(string $host = null): KernelBrowser
+    protected function getHttpClient(): KernelBrowser
     {
-        if (null === $host) {
-            $host = 'back.esteren.docker';
-        }
-
-        $client = $this->baseGetClient($host);
+        $client = $this->baseGetClient();
         $this->loginAsUser($client, 'pierstoval');
 
         return $client;

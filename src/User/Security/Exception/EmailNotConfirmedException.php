@@ -21,7 +21,7 @@ class EmailNotConfirmedException extends AuthenticationException
 
     public function __construct()
     {
-        parent::__construct(static::EXCEPTION_MESSAGE);
+        parent::__construct(self::EXCEPTION_MESSAGE);
     }
 
     /**
@@ -29,6 +29,6 @@ class EmailNotConfirmedException extends AuthenticationException
      */
     public function getMessageKey()
     {
-        return static::EXCEPTION_MESSAGE;
+        return self::EXCEPTION_MESSAGE;
     }
 }

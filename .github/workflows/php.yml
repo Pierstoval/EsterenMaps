@@ -40,32 +40,32 @@ jobs:
 
             - name: '[Run] 🚀 QA'
               run: make qa
-              if: always()
+              if: steps.install.outputs.exit_code == 0
 
             - name: '[Run] 🚀 PHPStan'
               run: make phpstan
-              if: always()
+              if: steps.install.outputs.exit_code == 0
 
             - name: '[Run] 🚀 CS'
               run: make cs-dry-run
-              if: always()
+              if: steps.install.outputs.exit_code == 0
 
             - name: 'Setup PHPUnit'
               run: make setup-phpunit
-              if: always()
+              if: steps.install.outputs.exit_code == 0
 
             - name: '[Run] 🚀 Unit tests'
               run: make phpunit-unit
-              if: always()
+              if: steps.install.outputs.exit_code == 0
 
             - name: '[Run] 🚀 Integration tests'
               run: make phpunit-integration
-              if: always()
+              if: steps.install.outputs.exit_code == 0
 
             - name: '[Run] 🚀 Functional tests'
               run: make phpunit-functional
-              if: always()
+              if: steps.install.outputs.exit_code == 0
 
             - name: '[Run] 🚀 UX tests'
               run: make phpunit-ux
-              if: always()
+              if: steps.install.outputs.exit_code == 0

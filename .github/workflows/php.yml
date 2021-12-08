@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
     build:
-        name: Studio Agate Apps
+        name: Esteren Maps Backend
 
         runs-on: ubuntu-latest
 

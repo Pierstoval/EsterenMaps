@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
     build:
-        name: Studio Agate Apps
+        name: Esteren Maps JS
 
         runs-on: ubuntu-latest
 

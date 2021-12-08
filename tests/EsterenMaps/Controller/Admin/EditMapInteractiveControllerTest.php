@@ -94,7 +94,7 @@ class EditMapInteractiveControllerTest extends PantherTestCase
             do {
                 $message .= $e->getMessage();
             } while ($e = $e->getPrevious());
-            self::markTestIncomplete("Seems that Panther did not work.\nReported error:\n".$message);
+            static::markTestIncomplete("Seems that Panther did not work.\nReported error:\n".$message);
         }
     }
 }

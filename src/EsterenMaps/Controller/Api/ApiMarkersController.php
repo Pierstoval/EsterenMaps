@@ -33,7 +33,7 @@ class ApiMarkersController implements PublicService
 
     /**
      * @Route(
-     *     "/api/markers",
+     *     "/markers",
      *     name="maps_api_markers_create",
      *     methods={"POST"},
      *     defaults={"_format" = "json"}
@@ -46,7 +46,7 @@ class ApiMarkersController implements PublicService
 
     /**
      * @Route(
-     *     "/api/markers/{id}",
+     *     "/markers/{id}",
      *     name="maps_api_markers_update",
      *     methods={"POST"},
      *     defaults={"_format" = "json"}
@@ -59,7 +59,7 @@ class ApiMarkersController implements PublicService
 
     /**
      * @Route(
-     *     "/api/markers/{id}",
+     *     "/markers/{id}",
      *     name="maps_api_markers_delete",
      *     methods={"DELETE"},
      *     defaults={"_format" = "json"}

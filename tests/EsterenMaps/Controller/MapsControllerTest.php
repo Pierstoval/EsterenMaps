@@ -26,7 +26,7 @@ class MapsControllerTest extends WebTestCase
      */
     public function test index(): void
     {
-        $client = $this->getHttpClient('maps.esteren.docker');
+        $client = $this->getHttpClient();
 
         $crawler = $client->request('GET', '/fr');
 
@@ -39,7 +39,7 @@ class MapsControllerTest extends WebTestCase
 
         static::assertInstanceOf(Link::class, $link);
         static::assertSame('Voir la carte', \trim($link->getNode()->textContent));
-        static::assertSame('http://maps.esteren.docker/fr/map-tri-kazel', \trim($link->getUri()));
+        static::assertSame('http://localhost/fr/map-tri-kazel', \trim($link->getUri()));
     }
 
     /**
@@ -47,7 +47,7 @@ class MapsControllerTest extends WebTestCase
      */
     public function test view while not logged in should trigger authentication(): void
     {
-        $client = $this->getHttpClient('maps.esteren.docker');
+        $client = $this->getHttpClient();
 
         $client->request('GET', '/fr/map-tri-kazel');
         $res = $client->getResponse();
@@ -60,7 +60,7 @@ class MapsControllerTest extends WebTestCase
      */
     public function test view when authenticated accessible(): void
     {
-        $client = $this->getHttpClient('maps.esteren.docker');
+        $client = $this->getHttpClient();
 
         $this->loginAsUser($client);
 
@@ -76,7 +76,7 @@ class MapsControllerTest extends WebTestCase
      */
     public function test view while connected is accessible for admin(): void
     {
-        $client = $this->getHttpClient('maps.esteren.docker');
+        $client = $this->getHttpClient();
 
         $this->loginAsUser($client, 'standard-admin');
 
@@ -92,7 +92,7 @@ class MapsControllerTest extends WebTestCase
      */
     public function test view while connected is accessible for user with active subscription(): void
     {
-        $client = $this->getHttpClient('maps.esteren.docker');
+        $client = $this->getHttpClient();
 
         $this->loginAsUser($client, 'map-subscribed');
 

@@ -30,7 +30,7 @@ class ApiMapsController implements PublicService
 
     /**
      * @Route(
-     *     "/api/maps/{id}",
+     *     "/maps/{id}",
      *     name="maps_api_maps_get",
      *     requirements={"id" = "\d+"},
      *     methods={"GET"}

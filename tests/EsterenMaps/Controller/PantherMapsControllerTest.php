@@ -24,11 +24,10 @@ class PantherMapsControllerTest extends PantherTestCase
 
     /**
      * @group ux
-     * @runInSeparateProcess
      */
     public function testMap(): void
     {
-        $client = static::createPantherClient(['external_base_uri' => 'http://maps.esteren.docker:8000']);
+        $client = static::createPantherClient(['external_base_uri' => 'http://127.0.0.1:8000']);
 
         $this->loginAs($client, 'pierstoval', 'admin');
 

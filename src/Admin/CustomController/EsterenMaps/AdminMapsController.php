@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace Admin\CustomController\EsterenMaps;
 
+use Admin\Controller\AdminController;
 use Admin\CustomController\BaseDTOControllerTrait;
 use Admin\DTO\EasyAdminDTOInterface;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\EasyAdminController;
 use EsterenMaps\DTO\MapAdminDTO;
 use EsterenMaps\Entity\Map;
 
-class AdminMapsController extends EasyAdminController
+class AdminMapsController extends AdminController
 {
     use BaseDTOControllerTrait;
 

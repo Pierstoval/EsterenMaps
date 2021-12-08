@@ -8,13 +8,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Project directory
 cd ${DIR}/../
 
-CLI_FILE="../env"
-if [[ -f ${CLI_FILE} ]]
-then
-    echo "[DEPLOY] > Loading env file ${CLI_FILE}"
-    source ${CLI_FILE}
-fi
-
 export APP_ENV=prod
 export APP_DEBUG=0
 

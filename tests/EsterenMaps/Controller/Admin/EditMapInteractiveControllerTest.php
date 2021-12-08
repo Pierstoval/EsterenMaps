@@ -26,13 +26,10 @@ class EditMapInteractiveControllerTest extends PantherTestCase
 {
     use PantherLoginTrait;
 
-    /**
-     * @runInSeparateProcess
-     */
     public function testUpdateMarkerName(): void
     {
         $client = static::createPantherClient([
-            'external_base_uri' => 'http://back.esteren.docker:8000',
+            'external_base_uri' => 'http://127.0.0.1:8000',
         ]);
 
         $this->loginAs($client, 'pierstoval', 'admin');

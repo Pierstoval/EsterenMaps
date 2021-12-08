@@ -25,7 +25,7 @@ class ApiMarkersControllerTest extends WebTestCase
      */
     public function testCreateWithCorrectData(): void
     {
-        $client = $this->getHttpClient('back.esteren.docker');
+        $client = $this->getHttpClient();
         $this->loginAsUser($client, 'standard-admin');
 
         $data = [
@@ -55,7 +55,7 @@ class ApiMarkersControllerTest extends WebTestCase
      */
     public function testCreateWithEmptyData(): void
     {
-        $client = $this->getHttpClient('back.esteren.docker');
+        $client = $this->getHttpClient();
         $this->loginAsUser($client, 'standard-admin');
 
         $client->request('POST', '/fr/api/markers', [], [], [], '[]');
@@ -84,7 +84,7 @@ class ApiMarkersControllerTest extends WebTestCase
      */
     public function testCreateWithIncorrectData(): void
     {
-        $client = $this->getHttpClient('back.esteren.docker');
+        $client = $this->getHttpClient();
         $this->loginAsUser($client, 'standard-admin');
 
         $dataToSend = [

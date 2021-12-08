@@ -35,7 +35,7 @@ class DirectionsManagerTest extends WebTestCase
      */
     public function testWorkingDirections(array $expectedData, string $map, int $from, int $to, string $transport = null): void
     {
-        $client = $this->getHttpClient('maps.esteren.docker');
+        $client = $this->getHttpClient();
         $this->loginAsUser($client);
 
         $em = static::$container->get(EntityManagerInterface::class);

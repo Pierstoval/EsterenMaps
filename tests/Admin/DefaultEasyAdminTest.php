@@ -25,9 +25,9 @@ class DefaultEasyAdminTest extends WebTestCase
      */
     public function test index returns 200 when logged in as admin(): void
     {
-        $client = $this->getHttpClient('back.esteren.docker');
+        $client = $this->getHttpClient();
         $this->loginAsUser($client, 'standard-admin');
-        $crawler = $client->request('GET', '/fr');
+        $crawler = $client->request('GET', '/fr/admin');
 
         static::assertSame(200, $client->getResponse()->getStatusCode(), \sprintf('Page title: "%s".', $crawler->filter('title')->html()));
         static::assertSame('Studio Agate', $crawler->filter('.content-wrapper h1')->text('', true));
@@ -39,10 +39,10 @@ class DefaultEasyAdminTest extends WebTestCase
      */
     public function test actions that need id must throw a 404 exception(string $action): void
     {
-        $client = $this->getHttpClient('back.esteren.docker');
+        $client = $this->getHttpClient();
         $this->loginAsUser($client, 'standard-admin');
 
-        $crawler = $client->request('GET', "/fr/PortalElement/{$action}");
+        $crawler = $client->request('GET', "/fr/admin/Maps/{$action}");
 
         static::assertSame(404, $client->getResponse()->getStatusCode(), $crawler->filter('title')->html());
         static::assertSame('An id must be specified for this action.', $crawler->filter('h1.exception-message')->text('', true));

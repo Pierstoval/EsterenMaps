@@ -33,7 +33,7 @@ class ApiZonesController implements PublicService
 
     /**
      * @Route(
-     *     "/api/zones",
+     *     "/zones",
      *     name="maps_api_zones_create",
      *     methods={"POST"},
      *     defaults={"_format" = "json"}
@@ -46,7 +46,7 @@ class ApiZonesController implements PublicService
 
     /**
      * @Route(
-     *     "/api/zones/{id}",
+     *     "/zones/{id}",
      *     name="maps_api_zones_update",
      *     methods={"POST"},
      *     defaults={"_format" = "json"}
@@ -59,7 +59,7 @@ class ApiZonesController implements PublicService
 
     /**
      * @Route(
-     *     "/api/zones/{id}",
+     *     "/zones/{id}",
      *     name="maps_api_zones_delete",
      *     methods={"DELETE"},
      *     defaults={"_format" = "json"}

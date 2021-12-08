@@ -15,19 +15,10 @@ easy_admin:
 
         menu:
             - { label: 'admin.links.admin_home', route: 'easyadmin', default: true, icon: 'home' }
-            - { label: 'admin.links.back_to_site', route: 'agate_portal_home', icon: 'arrow-left' }
-
-            - { label: 'admin.menu.site' }
-            - { label: 'admin.links.config', route: 'admin_config', icon: 'cogs', permission: ROLE_ADMIN }
-            - { entity: 'PortalElement', icon: 'file-text-o', permission: ROLE_ADMIN }
-            - { entity: 'Pages', icon: 'file-code-o', permission: CAN_EDIT_CMS }
-            - { entity: 'Product', icon: 'box-open', permission: CAN_EDIT_PRODUCTS }
-            - { entity: 'ProductFile', icon: 'box-open', permission: CAN_EDIT_PRODUCTS }
-            - { entity: 'ProductCategory', icon: 'boxes', permission: CAN_EDIT_PRODUCTS }
+            - { label: 'admin.links.back_to_site', route: 'root', icon: 'arrow-left' }
 
             - { label: 'admin.menu.users', permission: ROLE_ADMIN }
             - { entity: 'Users', icon: 'users', permission: ROLE_ADMIN }
-            - { entity: 'Subscriptions', icon: 'address-card', permission: ROLE_ADMIN }
 
             - { label: 'admin.menu.esterenmaps', permission: ROLE_ADMIN }
             - { entity: 'Maps', icon: 'map', permission: ROLE_ADMIN }

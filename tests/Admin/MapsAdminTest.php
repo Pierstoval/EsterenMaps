@@ -70,10 +70,10 @@ class MapsAdminTest extends AbstractEasyAdminTest
      */
     public function test edit interactive route returns 200(): void
     {
-        $client = $this->getHttpClient('back.esteren.docker');
+        $client = $this->getHttpClient();
         $this->loginAsUser($client, 'standard-admin');
 
-        $crawler = $client->request('GET', '/fr/maps/edit-interactive/1');
+        $crawler = $client->request('GET', '/fr/admin/maps/edit-interactive/1');
 
         static::assertSame(200, $client->getResponse()->getStatusCode());
         static::assertCount(1, $crawler->filter('div#esterenmap_sidebar'));

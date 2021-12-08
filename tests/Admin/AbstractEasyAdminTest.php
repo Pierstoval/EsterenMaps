@@ -89,7 +89,7 @@ abstract class AbstractEasyAdminTest extends WebTestCase
 
         $entityName = $this->getEntityName();
 
-        $crawler = $client->request('GET', "/fr/{$entityName}/list");
+        $crawler = $client->request('GET', "/fr/admin/{$entityName}/list");
 
         $wishedColumns = $this->provideListingFields();
 
@@ -126,7 +126,7 @@ abstract class AbstractEasyAdminTest extends WebTestCase
 
         $entityName = $this->getEntityName();
 
-        $crawler = $client->request('GET', "/fr/{$entityName}/list");
+        $crawler = $client->request('GET', "/fr/admin/{$entityName}/list");
 
         static::assertSame(200, $client->getResponse()->getStatusCode(), $entityName."\n".$crawler->filter('title')->text('', true));
 
@@ -200,7 +200,7 @@ abstract class AbstractEasyAdminTest extends WebTestCase
 
         // We'll make the DELETE request starting from the EDIT page.
 
-        $deleteForm = $client->request('DELETE', "/fr/{$entityName}/edit/{$id}?referer=/")->filter('#delete_form_submit');
+        $deleteForm = $client->request('DELETE', "/fr/admin/{$entityName}/edit/{$id}?referer=/")->filter('#delete_form_submit');
 
         static::assertCount(1, $deleteForm, $entityName);
 
@@ -240,7 +240,7 @@ abstract class AbstractEasyAdminTest extends WebTestCase
 
         $entityName = $this->getEntityName();
 
-        $crawler = $client->request('GET', "/fr/{$entityName}/{$view}".($id ? "/{$id}" : ''));
+        $crawler = $client->request('GET', "/fr/admin/{$entityName}/{$view}".($id ? "/{$id}" : ''));
 
         static::assertSame(200, $client->getResponse()->getStatusCode(), $entityName);
 
@@ -285,7 +285,7 @@ abstract class AbstractEasyAdminTest extends WebTestCase
             $entityName,
             $message
         ));
-        static::assertSame("/fr/{$entityName}/list", $response->headers->get('location'), $entityName);
+        static::assertSame("/fr/admin/{$entityName}/list", $response->headers->get('location'), $entityName);
 
         $crawler->clear();
         $client->followRedirect();

@@ -24,29 +24,15 @@ class ApiMapsControllerTest extends WebTestCase
     /**
      * @group functional
      */
-    public function test getting map api without role needs authentication(): void
-    {
-        $client = $this->getHttpClient('maps.esteren.docker');
-
-        $client->request('GET', '/fr/api/maps/1');
-
-        $response = $client->getResponse();
-        static::assertSame(401, $response->getStatusCode());
-    }
-
-    /**
-     * @group functional
-     */
     public function test get map api data(): void
     {
-        $client = $this->getHttpClient('maps.esteren.docker');
-        $this->loginAsUser($client);
+        $client = $this->getHttpClient();
 
         $client->request('GET', '/fr/api/maps/1');
 
         static::assertResponseStatusCodeSame(200);
 
-        $data = \json_decode($client->getResponse()->getContent(), true);
+        $data = \json_decode($client->getResponse()->getContent(), true, 512, JSON_THROW_ON_ERROR);
 
         if (\json_last_error()) {
             static::fail(\json_last_error_msg());
@@ -280,11 +266,11 @@ class ApiMapsControllerTest extends WebTestCase
 
     private function getMapData(string $role)
     {
-        $client = $this->getHttpClient('maps.esteren.docker');
+        $client = $this->getHttpClient();
 
         static::$container
             ->get('doctrine.dbal.default_connection')
-            ->prepare('UPDATE fos_user_user SET roles = :roles WHERE username = :username;')
+            ->prepare('UPDATE users SET roles = :roles WHERE username = :username;')
             ->executeStatement([
                 'roles' => \serialize(['ROLE_USER', $role]),
                 'username' => 'lambda-user',

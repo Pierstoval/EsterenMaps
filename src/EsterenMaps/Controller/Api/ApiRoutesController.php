@@ -33,7 +33,7 @@ class ApiRoutesController implements PublicService
 
     /**
      * @Route(
-     *     "/api/routes",
+     *     "/routes",
      *     name="maps_api_routes_create",
      *     methods={"POST"},
      *     defaults={"_format" = "json"}
@@ -46,7 +46,7 @@ class ApiRoutesController implements PublicService
 
     /**
      * @Route(
-     *     "/api/routes/{id}",
+     *     "/routes/{id}",
      *     name="maps_api_routes_update",
      *     methods={"POST"},
      *     defaults={"_format" = "json"}
@@ -59,7 +59,7 @@ class ApiRoutesController implements PublicService
 
     /**
      * @Route(
-     *     "/api/routes/{id}",
+     *     "/routes/{id}",
      *     name="maps_api_routes_delete",
      *     methods={"DELETE"},
      *     defaults={"_format" = "json"}

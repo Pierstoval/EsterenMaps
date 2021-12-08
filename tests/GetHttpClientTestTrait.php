@@ -41,17 +41,13 @@ trait GetHttpClientTestTrait
         static::setToken($client, $user, $user->getRoles());
     }
 
-    protected function getHttpClient(string $host = null): KernelBrowser
+    protected function getHttpClient(): KernelBrowser
     {
         if (!$this instanceof KernelTestCase) {
             throw new \RuntimeException(\sprintf('Test case must extend %s to use Kernel features', KernelTestCase::class));
         }
 
         $server = [];
-
-        if ($host) {
-            $server['HTTP_HOST'] = $host;
-        }
 
         /** @var KernelBrowser $client */
         $client = static::createClient([], $server);
@@ -72,7 +68,7 @@ trait GetHttpClientTestTrait
         $session = $client->getContainer()->get('session');
 
         $token = new PostAuthenticationGuardToken($user, $firewallName, $roles);
-        static::$container->get(AuthenticationManagerInterface::class)->authenticate($token);
+        static::getContainer()->get(AuthenticationManagerInterface::class)->authenticate($token);
 
         $session->set('_security_'.$firewallName, \serialize($token));
         $session->save();

@@ -32,7 +32,7 @@ class ApiMapsControllerTest extends WebTestCase
 
         static::assertResponseStatusCodeSame(200);
 
-        $data = \json_decode($client->getResponse()->getContent(), true, 512, JSON_THROW_ON_ERROR);
+        $data = \json_decode($client->getResponse()->getContent(), true, 512, \JSON_THROW_ON_ERROR);
 
         if (\json_last_error()) {
             static::fail(\json_last_error_msg());

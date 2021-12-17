@@ -20,7 +20,6 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use function in_array;
 
 class AdminController extends EasyAdminController implements PublicService
 {
@@ -45,7 +44,7 @@ class AdminController extends EasyAdminController implements PublicService
      */
     public function indexAction(Request $request, string $entity = null, string $action = null, string $id = null): RedirectResponse|Response
     {
-        if (!$id && in_array($action, ['delete', 'show', 'edit'], true)) {
+        if (!$id && \in_array($action, ['delete', 'show', 'edit'], true)) {
             throw $this->createNotFoundException('An id must be specified for this action.');
         }
 

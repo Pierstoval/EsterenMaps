@@ -57,9 +57,11 @@ class MapsController extends AbstractController
             'public' => false,
         ]);
 
+        /* Disabling now because app will certainly be kept public in the end (2022-01-09)
         if (!$this->getUser()) {
             throw new AccessDeniedException('You must be logged in to view maps.');
         }
+        */
 
         return $this->render('esteren_maps/Maps/view.html.twig', [
             'map' => $map,

@@ -44,15 +44,20 @@ class MapOptions
         $this->requestStack = $requestStack;
     }
 
-    public function getMapViewOptions(Map $map, User $user): string
+    public function getMapViewOptions(Map $map, ?User $user = null): string
     {
         /** @var Request $request */
         $request = $this->requestStack->getCurrentRequest();
 
         $mapOptions = $this->getDefaultOptions($map, $request);
 
-        $mapOptions['canAddNotes'] = $this->authChecker->isGranted('SUBSCRIBED_TO_MAPS') && $this->authChecker->isGranted(ApiMapElementVoter::CAN_ADD_NOTES);
-        $mapOptions['visitor'] = $user->getId();
+        if ($user) {
+            $mapOptions['canAddNotes'] = $this->authChecker->isGranted('SUBSCRIBED_TO_MAPS') && $this->authChecker->isGranted(ApiMapElementVoter::CAN_ADD_NOTES);
+            $mapOptions['visitor'] = $user->getId();
+        } else {
+            $mapOptions['canAddNotes'] = false;
+            $mapOptions['visitor'] = null;
+        }
 
         return \json_encode($mapOptions, \JSON_THROW_ON_ERROR | \JSON_UNESCAPED_SLASHES);
     }

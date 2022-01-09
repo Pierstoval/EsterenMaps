@@ -45,14 +45,15 @@ class MapsControllerTest extends WebTestCase
     /**
      * @group functional
      */
-    public function test view while not logged in should trigger authentication(): void
+    public function test view while not logged in works(): void
     {
         $client = $this->getHttpClient();
 
-        $client->request('GET', '/fr/map-tri-kazel');
+        $crawler = $client->request('GET', '/fr/map-tri-kazel');
         $res = $client->getResponse();
 
-        static::assertSame(401, $res->getStatusCode());
+        static::assertSame(200, $res->getStatusCode());
+        static::assertSame('Tri-Kazel', $crawler->filter('h1')->text('', true));
     }
 
     /**

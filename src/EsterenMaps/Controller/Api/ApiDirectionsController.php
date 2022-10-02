@@ -45,7 +45,8 @@ class ApiDirectionsController extends AbstractController
     public function __invoke(Map $map, Marker $from, Marker $to, Request $request): JsonResponse
     {
         if (!$this->getUser()) {
-            throw $this->createAccessDeniedException();
+            // Disable mandatory login now
+            //throw $this->createAccessDeniedException();
         }
 
         $transportId = $request->query->get('transport');

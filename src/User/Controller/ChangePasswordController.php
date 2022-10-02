@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace User\Controller;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,13 +26,11 @@ use User\Form\Type\ChangePasswordFormType;
 
 class ChangePasswordController extends AbstractController
 {
-    private UserPasswordHasherInterface $passwordEncoder;
-    private TranslatorInterface $translator;
-
-    public function __construct(UserPasswordHasherInterface $passwordEncoder, TranslatorInterface $translator)
-    {
-        $this->passwordEncoder = $passwordEncoder;
-        $this->translator = $translator;
+    public function __construct(
+        private UserPasswordHasherInterface $passwordEncoder,
+        private TranslatorInterface $translator,
+        private EntityManagerInterface $em,
+    ) {
     }
 
     /**
@@ -54,9 +53,8 @@ class ChangePasswordController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $user->setPassword($this->passwordEncoder->hashPassword($user, $user->getPlainPassword()));
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();
+            $this->em->persist($user);
+            $this->em->flush();
 
             $this->addFlash('success', $this->translator->trans('change_password.flash.success', [], 'user'));
 

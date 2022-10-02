@@ -26,53 +26,49 @@ trait PantherLoginTrait
         string $username,
         string $plainPassword
     ): void {
+        $crawler = $client->request('GET', '/fr/login');
+
+        Assert::assertSame(200, $client->getInternalResponse()->getStatusCode());
+
+        $driver = $client->getWebDriver();
+
+        // Check login in main app
         try {
-            $crawler = $client->request('GET', '/fr/login');
+            $driver->wait(2, 1000)->until(WebDriverExpectedCondition::visibilityOfElementLocated(WebDriverBy::cssSelector('#profile_link')));
 
-            Assert::assertSame(200, $client->getInternalResponse()->getStatusCode());
-
-            $driver = $client->getWebDriver();
-
-            // Check login in main app
-            try {
-                $driver->wait(2, 1000)->until(WebDriverExpectedCondition::visibilityOfElementLocated(WebDriverBy::cssSelector('#profile_link')));
-
-                return;
-            } catch (NoSuchElementException $e) {
-            }
-
-            // Check login in backoffice
-            try {
-                $driver->wait(2, 1000)->until(WebDriverExpectedCondition::visibilityOfElementLocated(WebDriverBy::cssSelector('.user-menu-wrapper .user-name')));
-
-                @\trigger_error('Already logged in with backoffice.', \E_USER_DEPRECATED);
-
-                return;
-            } catch (NoSuchElementException $e) {
-            }
-
-            $host = \parse_url($driver->getCurrentURL(), \PHP_URL_HOST);
-
-            if ('back.esteren.docker' === $host) {
-                $formSelector = '.login-wrapper form[method="post"]';
-            } else {
-                $formSelector = '#form_login';
-            }
-
-            $driver->wait(2, 1000)->until(WebDriverExpectedCondition::visibilityOfElementLocated(WebDriverBy::cssSelector($formSelector)));
-
-            $form = $crawler->filter($formSelector)->form();
-
-            $client->submit($form, [
-                '_username_or_email' => $username,
-                '_password' => $plainPassword,
-            ]);
-
-            $crawler = $client->request('GET', '/fr/profile');
-
-            Assert::assertSame('Modifier mon profil', $crawler->filter('h1')->text('', true));
-        } catch (\Throwable $e) {
-            self::markTestSkipped('Panther does not seem to be ready yet 🤷');
+            return;
+        } catch (NoSuchElementException $e) {
         }
+
+        // Check login in backoffice
+        try {
+            $driver->wait(2, 1000)->until(WebDriverExpectedCondition::visibilityOfElementLocated(WebDriverBy::cssSelector('.user-menu-wrapper .user-name')));
+
+            @\trigger_error('Already logged in with backoffice.', \E_USER_DEPRECATED);
+
+            return;
+        } catch (NoSuchElementException $e) {
+        }
+
+        $host = \parse_url($driver->getCurrentURL(), \PHP_URL_HOST);
+
+        if ('back.esteren.docker' === $host) {
+            $formSelector = '.login-wrapper form[method="post"]';
+        } else {
+            $formSelector = '#form_login';
+        }
+
+        $driver->wait(2, 1000)->until(WebDriverExpectedCondition::visibilityOfElementLocated(WebDriverBy::cssSelector($formSelector)));
+
+        $form = $crawler->filter($formSelector)->form();
+
+        $client->submit($form, [
+            '_username_or_email' => $username,
+            '_password' => $plainPassword,
+        ]);
+
+        $crawler = $client->request('GET', '/fr/profile');
+
+        Assert::assertSame('Modifier mon profil', $crawler->filter('h1')->text('', true));
     }
 }

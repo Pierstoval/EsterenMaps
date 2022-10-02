@@ -70,7 +70,6 @@ class Faction
         $self->locale = 'fr';
         $self->name = $dto->translatedNames['fr'];
         $self->description = $dto->translatedDescriptions['fr'];
-        $self->book = $dto->book;
 
         return $self;
     }
@@ -80,7 +79,6 @@ class Faction
         $this->locale = 'fr';
         $this->name = $dto->translatedNames['fr'];
         $this->description = $dto->translatedDescriptions['fr'];
-        $this->book = $dto->book;
     }
 
     public function getId(): ?int

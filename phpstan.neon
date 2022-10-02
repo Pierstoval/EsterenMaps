@@ -30,7 +30,5 @@ parameters:
     #    objectManagerLoader: tests/phpstan-object-manager.php
 
     ignoreErrors:
-          # These actions are so complex that we sometimes need dirty hacks. That's life...
         - { message: '#Fixtures::getObjects\(\)#', path: %currentWorkingDirectory%/src/ }
-        - { message: '#.*#', path: %currentWorkingDirectory%/tests/Stubs/ExecutionContextStubFactory.php }
         - { message: '#since Symfony 5\.3, use the new authenticator system instead#', path: %currentWorkingDirectory% }

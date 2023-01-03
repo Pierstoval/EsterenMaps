@@ -1,8 +1,8 @@
 
 build:
-	docker build --compress --pull . -t pierstoval/studio-agate-portal:latest
+	cd ../.. && docker build --compress --pull docker/php -t pierstoval/esterenmaps:latest
 .PHONY: build
 
 push:
-	docker push pierstoval/studio-agate-portal:latest
+	docker push pierstoval/esterenmaps:latest
 .PHONY: push

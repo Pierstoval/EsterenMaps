@@ -1,36 +1,46 @@
-version: '3'
+version: "3.4"
 
 volumes:
-    node_modules:
     db_data:
+    php_socket:
 
 services:
-
     php:
-        image: pierstoval/esterenmaps
+        build:
+            context: ./docker/php/
         working_dir: /srv/
         volumes:
-            - ./:/srv
-        links:
-            - database
-            - mailer
+            - "./backend/:/srv"
+            - "php_socket:/var/run/php"
 
-    mailer:
-        build: ./docker/mailcatcher/
+    caddy:
+        build:
+            context: ./docker/caddy/
+        working_dir: /srv/
+        volumes:
+            - "php_socket:/var/run/php"
+            - "./backend/:/srv/"
+        ports:
+            - "80:80"
+            - "443:443"
+            - "443:443/udp"
+
+    mailcatcher:
+        image: mailhog/mailhog
 
     node:
         build: ./docker/node/
         working_dir: /srv/
+        ports:
+            - "3000:3000"
         volumes:
-            - ./:/srv
+            - "./:/srv"
         command: 'sleep 99999d'
 
     database:
         image: 'mysql:5.7'
         working_dir: /srv/
         volumes:
-            # Dump can be saved in the "data/" directory if you need.
-            - ./data/:/srv/:ro
             - ./docker/mysql/etc/bind.cnf:/etc/mysql/conf.d/bind.cnf
             - ./docker/mysql/etc/docker-override.cnf:/etc/mysql/conf.d/docker.cnf
             - db_data:/var/lib/mysql

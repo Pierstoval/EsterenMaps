@@ -49,7 +49,6 @@
         "symfony/monolog-bundle": "^3.6",
         "symfony/options-resolver": "^5.2",
         "symfony/polyfill-apcu": "^1.22",
-        "symfony/polyfill-php80": "^1.22",
         "symfony/polyfill-uuid": "^1.22",
         "symfony/process": "^5.2",
         "symfony/property-access": "^5.2",

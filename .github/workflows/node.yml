@@ -14,15 +14,15 @@ jobs:
             - name: Setup Node.js
               uses: actions/setup-node@v1
               with:
-                  node-version: '10'
+                  node-version: '14'
 
-            - run: npm install
+            - run: yarn install
 
             - name: '[Run] 🚀 Build assets for dev'
-              run: npm run dev
+              run: yarn run dev
 
             - name: 'Clean build'
               run: rm -rf public/build
 
             - name: '[Run] 🚀 Build assets for prod'
-              run: npm run build
+              run: yarn run build

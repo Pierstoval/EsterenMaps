@@ -143,7 +143,7 @@ class UserRoleCommandTest extends KernelTestCase
 
         /** @var UserRepository $repo */
         $repo = static::$container->get(UserRepository::class);
-        $user = $repo->loadUserByUsername('pierstoval');
+        $user = $repo->loadUserByIdentifier('pierstoval');
 
         static::assertNotNull($user);
         static::assertSame(['ROLE_USER', 'ROLE_SUPER_ADMIN', 'ROLE_TEST'], $user->getRoles());
@@ -175,7 +175,7 @@ class UserRoleCommandTest extends KernelTestCase
 
         /** @var UserRepository $repo */
         $repo = static::$container->get(UserRepository::class);
-        $user = $repo->loadUserByUsername('pierstoval');
+        $user = $repo->loadUserByIdentifier('pierstoval');
 
         static::assertNotNull($user);
         static::assertSame(['ROLE_USER'], $user->getRoles());

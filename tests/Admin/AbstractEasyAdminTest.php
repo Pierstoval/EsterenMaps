@@ -338,7 +338,7 @@ abstract class AbstractEasyAdminTest extends WebTestCase
             $host = 'back.esteren.docker';
         }
 
-        $client = $this->baseGetClient($host);
+        $client = $this->baseGetClient();
         $this->loginAsUser($client, 'pierstoval');
 
         return $client;

@@ -59,7 +59,7 @@ class ProfileFormType extends AbstractType
                 // Canonicalize properties
                 /** @var User $user */
                 $user = $event->getForm()->getData();
-                $user->setUsernameCanonical($canonicalizer($user->getUsername()));
+                $user->setUsernameCanonical($canonicalizer($user->getUserIdentifier()));
                 $user->setEmailCanonical($canonicalizer($user->getEmail()));
             })
         ;

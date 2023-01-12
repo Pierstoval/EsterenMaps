@@ -60,7 +60,7 @@ class TransportType implements \JsonSerializable
     protected $description;
 
     /**
-     * @var string
+     * @var float
      *
      * @ORM\Column(name="speed", type="decimal", scale=4, precision=8, nullable=false)
      * @Assert\NotNull
@@ -182,7 +182,7 @@ class TransportType implements \JsonSerializable
     }
 
     /**
-     * @return string
+     * @return float
      *
      * @codeCoverageIgnore
      */
@@ -192,13 +192,13 @@ class TransportType implements \JsonSerializable
     }
 
     /**
-     * @param string $speed
+     * @param float $speed
      *
      * @return TransportType
      *
      * @codeCoverageIgnore
      */
-    public function setSpeed($speed)
+    public function setSpeed(float $speed)
     {
         $this->speed = $speed;
 

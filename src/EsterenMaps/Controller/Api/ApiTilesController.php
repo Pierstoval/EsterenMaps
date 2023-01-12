@@ -23,18 +23,18 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class ApiTilesController extends AbstractController
 {
-    private $outputDirectory;
-    private $mapImageGenerator;
+    private string $outputDirectory;
 
     public function __construct(
         string $outputDirectory,
-        MapImageGenerator $mapImageGenerator
+        private MapImageGenerator $mapImageGenerator,
+        private TranslatorInterface $translator,
     ) {
         $this->outputDirectory = $outputDirectory;
-        $this->mapImageGenerator = $mapImageGenerator;
     }
 
     /**
@@ -53,7 +53,7 @@ class ApiTilesController extends AbstractController
         $messages = [];
         foreach ($form->getErrors(true) as $error) {
             $field = $error->getOrigin()->getName();
-            $messages[] = $this->get('translator')->trans('field_error', ['%field%' => $field], 'validators').': '.$error->getMessage();
+            $messages[] = $this->translator->trans('field_error', ['%field%' => $field], 'validators').': '.$error->getMessage();
         }
 
         return new JsonResponse([

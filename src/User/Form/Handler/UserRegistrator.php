@@ -52,8 +52,8 @@ class UserRegistrator
 
         $this->mailer->sendRegistrationEmail($user);
 
-        $session->getFlashBag()->add('success', $this->translator->trans('registration.confirmed', ['%username%' => $user->getUsername()], 'user'));
+        $session->getFlashBag()->add('success', $this->translator->trans('registration.confirmed', ['%username%' => $user->getUserIdentifier()], 'user'));
 
-        $session->set(Security::LAST_USERNAME, $user->getUsername());
+        $session->set(Security::LAST_USERNAME, $user->getUserIdentifier());
     }
 }

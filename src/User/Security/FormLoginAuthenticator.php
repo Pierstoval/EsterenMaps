@@ -124,7 +124,7 @@ final class FormLoginAuthenticator extends AbstractGuardAuthenticator
     public function getUser($credentials, UserProviderInterface $userProvider): UserInterface
     {
         try {
-            $user = $userProvider->loadUserByUsername($credentials->getUsernameOrEmail());
+            $user = $userProvider->loadUserByIdentifier($credentials->getUsernameOrEmail());
         } catch (UserNotFoundException $e) {
             throw new BadCredentialsException('security.bad_credentials');
         }

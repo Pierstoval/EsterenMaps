@@ -87,7 +87,7 @@ class UserRoleCommand extends Command
         }
 
         if ($input->getOption('promote')) {
-            $io->block(\sprintf('Adding roles to %s:', $user->getUsername()));
+            $io->block(\sprintf('Adding roles to %s:', $user->getUserIdentifier()));
             $io->listing($roles);
             foreach ($roles as $role) {
                 if ($user->hasRole($role)) {
@@ -100,7 +100,7 @@ class UserRoleCommand extends Command
         }
 
         if ($input->getOption('demote')) {
-            $io->block(\sprintf('Removing roles to %s:', $user->getUsername()));
+            $io->block(\sprintf('Removing roles to %s:', $user->getUserIdentifier()));
             $io->listing($roles);
             foreach ($roles as $role) {
                 if (!$user->hasRole($role)) {

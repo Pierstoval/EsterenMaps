@@ -56,7 +56,7 @@ class AdminUserController extends AdminController
             ->addEventListener(FormEvents::SUBMIT, function (FormEvent $event) use ($canonicalizer): void {
                 /** @var User $user */
                 $user = $event->getForm()->getData();
-                $user->setUsernameCanonical($canonicalizer((string) $user->getUsername()));
+                $user->setUsernameCanonical($canonicalizer((string) $user->getUserIdentifier()));
                 $user->setEmailCanonical($canonicalizer((string) $user->getEmail()));
             })
         ;

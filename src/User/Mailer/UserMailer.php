@@ -52,7 +52,7 @@ final class UserMailer
         $message = new Email();
 
         $message
-            ->subject($this->translator->trans('registration.email.subject', ['%username%' => $user->getUsername()], 'user'))
+            ->subject($this->translator->trans('registration.email.subject', ['%username%' => $user->getUserIdentifier()], 'user'))
             ->from($this->sender)
             ->to($user->getEmail())
             ->html($rendered)
@@ -74,9 +74,9 @@ final class UserMailer
         $message = new Email();
 
         $message
-            ->subject($this->translator->trans('resetting.email.subject', ['%username%' => $user->getUsername()], 'user'))
+            ->subject($this->translator->trans('resetting.email.subject', ['%username%' => $user->getUserIdentifier()], 'user'))
             ->from($this->sender)
-            ->to(new Address($user->getEmail(), $user->getUsername()))
+            ->to(new Address($user->getEmail(), $user->getUserIdentifier()))
             ->html($rendered)
             ->text(\strip_tags($rendered))
         ;

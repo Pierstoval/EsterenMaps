@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace User\Controller;
 
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
@@ -30,15 +31,11 @@ class RegistrationController extends AbstractController
 {
     use TargetPathTrait;
 
-    private $userRepository;
-    private $registrationHandler;
-
     public function __construct(
-        UserRepository $userRepository,
-        UserRegistrator $registrationHandler
+        private UserRepository $userRepository,
+        private UserRegistrator $registrationHandler,
+        private EntityManagerInterface $em,
     ) {
-        $this->userRepository = $userRepository;
-        $this->registrationHandler = $registrationHandler;
     }
 
     /**
@@ -114,9 +111,8 @@ class RegistrationController extends AbstractController
         $user->setConfirmationToken(null);
         $user->setEmailConfirmed(true);
 
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($user);
-        $em->flush();
+        $this->em->persist($user);
+        $this->em->flush();
 
         $this->addFlash('user_success', 'registration.confirmed');
 

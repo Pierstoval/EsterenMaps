@@ -243,7 +243,7 @@ class User implements UserInterface, \Serializable, EquatableInterface, Password
 
     public function getUserIdentifier(): string
     {
-        return (string) $this->id;
+        return (string) $this->username;
     }
 
     public function setUsername($username): self

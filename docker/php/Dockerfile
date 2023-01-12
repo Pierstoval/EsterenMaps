@@ -44,9 +44,10 @@ RUN set -xe \
         php${PHP_VERSION}-apcu \
         php${PHP_VERSION}-curl \
         php${PHP_VERSION}-fpm \
+        php${PHP_VERSION}-gd \
         php${PHP_VERSION}-intl \
         php${PHP_VERSION}-mbstring \
-        php${PHP_VERSION}-pgsql \
+        php${PHP_VERSION}-mysql \
         php${PHP_VERSION}-opcache \
         php${PHP_VERSION}-xml \
         php${PHP_VERSION}-zip \

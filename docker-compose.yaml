@@ -10,7 +10,7 @@ services:
             context: ./docker/php/
         working_dir: /srv/
         volumes:
-            - "./backend/:/srv"
+            - "./:/srv"
             - "php_socket:/var/run/php"
 
     caddy:

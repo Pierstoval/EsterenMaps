@@ -192,8 +192,6 @@ class TransportType implements \JsonSerializable
     }
 
     /**
-     * @param float $speed
-     *
      * @return TransportType
      *
      * @codeCoverageIgnore
